@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEND Aware - Secondary School SEND Strategies</title>
+    <meta name="description" content="Evidence-backed strategies for secondary SEND. Support for parents, teachers & SENCos navigating ADHD, dyslexia & autism.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9fafb;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 20px;
+            margin: 0 auto;
+        }
+        
+        .section-light {
+            background: white;
+        }
+        
+        .section-grey {
+            background: #f5f7fa;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #667eea;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .trust-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .trust-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .trust-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .audience-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #667eea;
+        }
+        
+        .audience-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .audience-card p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .audience-card .cta-button {
+            width: 100%;
+            text-align: center;
+            background: #667eea;
+            font-size: 1rem;
+            padding: 12px 20px;
+        }
+        
+        .audience-card .cta-button:hover {
+            background: #5568d3;
+        }
+        
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .resource-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .resource-card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .free-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .premium-badge {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .newsletter-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .newsletter-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-section ul {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+            margin: 30px 0;
+        }
+        
+        .newsletter-section li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .newsletter-section li:last-child {
+            border-bottom: none;
+        }
+        
+        .newsletter-section li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            margin: 0 20px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header>
+        <h1>Supporting Secondary School SEND</h1>
+        <p>Evidence-backed strategies for parents, teachers & SENCos</p>
+        <a href="https://parent-support-2.kit.com/subscribe/1720685" class="cta-button">Get Free Newsletter</a>
+    </header>
+    
+    <!-- Trust Section -->
+    <section class="section-light container">
+        <div class="trust-box">
+            <div class="trust-item">
+                <h4>500K Students</h4>
+                <p>UK secondary students with ADHD, 80% unsupported</p>
+            </div>
+            <div class="trust-item">
+                <h4>Evidence-Based</h4>
+                <p>Research-backed strategies from UK experts</p>
+            </div>
+            <div class="trust-item">
+                <h4>Practical Help</h4>
+                <p>Legal rights guidance, classroom tactics & resources</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- For Different Audiences -->
+    <section class="section-grey container">
+        <h2>Who This Is For</h2>
+        
+        <div class="audience-grid">
+            <!-- Parents -->
+            <div class="audience-card">
+                <h3>👨‍👩‍👧 For Parents</h3>
+                <p>Stuck waiting for diagnosis? Confused about your rights? Get practical strategies for navigating SEND at secondary school.</p>
+                <p><strong>Free:</strong> EHCP Action Checklist + weekly newsletter</p>
+                <a href="https://parent-support-2.kit.com/subscribe/1720685" class="cta-button">Subscribe for Parent Resources</a>
+            </div>
+            
+            <!-- Teachers -->
+            <div class="audience-card">
+                <h3>🎓 For Teachers</h3>
+                <p>Looking for evidence-backed classroom strategies? Get practical tactics for supporting diverse learners in secondary.</p>
+                <p><strong>Free:</strong> Classroom Strategies Cheat Sheet + PD resources</p>
+                <a href="https://parent-support-2.kit.com/subscribe/1720685" class="cta-button">Subscribe for Teaching Resources</a>
+            </div>
+            
+            <!-- SENCos -->
+            <div class="audience-card">
+                <h3>💼 For SENCos</h3>
+                <p>Overwhelmed? Get sector updates, templates & resources to streamline your SEND workload.</p>
+                <p><strong>Free:</strong> Transition Planning Template + weekly updates</p>
+                <a href="https://parent-support-2.kit.com/subscribe/1720685" class="cta-button">Subscribe for SENCo Resources</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Resources -->
+    <section class="section-light container">
+        <h2>Free Resources</h2>
+        
+        <div class="resources">
+            <div class="resource-card">
+                <span class="free-badge">FREE</span>
+                <h4>EHCP Action Checklist</h4>
+                <p>15-point checklist for navigating EHCP requests with legal rights summary & timeline expectations.</p>
+                <a href="https://gumroad.com/send_aware" class="cta-button" style="background: #667eea; width: 100%; text-align: center; padding: 10px;">Download PDF</a>
+            </div>
+            
+            <div class="resource-card">
+                <span class="free-badge">FREE</span>
+                <h4>Classroom Strategies for ADHD</h4>
+                <p>10 evidence-backed tactics designed by experienced SENCos. Printable, ready to use.</p>
+                <a href="https://gumroad.com/send_aware" class="cta-button" style="background: #667eea; width: 100%; text-align: center; padding: 10px;">Download PDF</a>
+            </div>
+            
+            <div class="resource-card">
+                <span class="free-badge">FREE</span>
+                <h4>Dyslexia Support Guide</h4>
+                <p>Reading accommodations, tech tools & parent navigation tips for secondary school.</p>
+                <a href="https://gumroad.com/send_aware" class="cta-button" style="background: #667eea; width: 100%; text-align: center; padding: 10px;">Download PDF</a>
+            </div>
+            
+            <div class="resource-card">
+                <span class="premium-badge">£5 LIMITED</span>
+                <h4>Transition Planning Workbook</h4>
+                <p>Primary → Secondary transition guide with SEND-specific considerations. Regular price £7.</p>
+                <a href="https://gumroad.com/send_aware" class="cta-button" style="background: #f59e0b; width: 100%; text-align: center; padding: 10px;">Get Workbook</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Newsletter CTA -->
+    <section class="newsletter-section container">
+        <h2>📧 Join Our Free Newsletter</h2>
+        <p>Weekly evidence-backed strategies, real stories & resources</p>
+        
+        <ul>
+            <li>Weekly strategies (no fluff)</li>
+            <li>Real parent & teacher stories</li>
+            <li>Legal rights updates</li>
+            <li>Product recommendations</li>
+            <li>Early access to templates</li>
+        </ul>
+        
+        <p style="margin-top: 30px; font-size: 0.9rem;">Frequency: Thursdays • No spam • Unsubscribe anytime</p>
+        <a href="https://parent-support-2.kit.com/subscribe/1720685" class="cta-button" style="background: white; color: #667eea; margin-top: 20px;">Subscribe Now</a>
+    </section>
+    
+    <!-- Social Proof / Testimonials -->
+    <section class="section-grey container">
+        <h2>What Parents & Educators Say</h2>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"Finally, someone who gets it. This gave me the confidence to fight for my son's EHCP."</p>
+                <div class="testimonial-author">— Sarah, Parent (ADHD)</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"I wish I'd had this when I started as a SENCo. Would have saved me months of frustration."</p>
+                <div class="testimonial-author">— James, Secondary School SENCo</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"Evidence-based AND practical. Rare combination. Already using the classroom strategies."</p>
+                <div class="testimonial-author">— Emma, Secondary Teacher</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://parent-support-2.kit.com/posts/send-aware-issue-1-the-ultimate-secondary-school-adhd-resource">Read Issue #1</a>
+            <a href="#">Privacy Policy</a>
+            <a href="mailto:hello@sendaware.org">Contact</a>
+        </div>
+        
+        <p style="font-size: 0.9rem; opacity: 0.8;">
+            SEND Aware • Building support for secondary SEND students<br>
+            © 2026. All rights reserved.
+        </p>
+        
+        <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 15px;">
+            <em>Affiliate Disclosure: We may earn a small commission if you purchase through our product recommendations.</em>
+        </p>
+    </footer>
+</body>
+</html>

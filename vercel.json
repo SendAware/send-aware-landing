@@ -1,0 +1,33 @@
+{
+  "name": "SEND Aware Landing Page",
+  "version": 2,
+  "public": true,
+  "buildCommand": "# No build needed - static HTML",
+  "outputDirectory": ".",
+  "env": [],
+  "regions": ["lhr1"],
+  "functions": {},
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
